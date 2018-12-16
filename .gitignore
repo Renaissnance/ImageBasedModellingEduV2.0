@@ -36,6 +36,6 @@ build/*
 /cmake-build-debug/*
 .DS_Store
 */.DS_Store
-*/tmp
-*/.vscode
+*tmp/*
+*.vscode
 
