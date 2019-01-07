@@ -30,7 +30,7 @@ main (int argc, char** argv)
 {
     if (argc < 3)
     {
-        std::cerr << "Syntax: " << argv[0] << " <image>" << "out put file name path"<<std::endl;
+        std::cerr << "Syntax: " << argv[0] << " <image>" << "out put file name path without .png format"<<std::endl;
         return 1;
     }
 
