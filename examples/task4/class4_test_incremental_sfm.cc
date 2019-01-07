@@ -158,8 +158,8 @@ features_and_matching (core::Scene::Ptr scene,
 int main(int argc, char *argv[])
 {
 
-    if(argc < 3){
-        std::cout<<"Usage: [input]image_dir [output]scen_dir"<<std::endl;
+    if(argc < 4){
+        std::cout<<"Usage: [input]image_dir [output]scen_dir [output]PLYFILE.ply"<<std::endl;
         return -1;
     }
 
@@ -348,7 +348,9 @@ int main(int argc, char *argv[])
 
 
     /***** 保存输出结果***/
-    std::ofstream out_file("/home/xsun/ImageBasedModellingEduV1.0/examples/data/sfm_result_points.ply");
+    std::string filename = argv[3];
+    std::ofstream out_file(filename);
+    //std::ofstream out_file("/home/xsun/ImageBasedModellingEduV1.0/examples/data/sfm_result_points.ply");
     assert(out_file.is_open());
     out_file<<"ply"<<std::endl;
     out_file<<"format ascii 1.0"<<std::endl;
