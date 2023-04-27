@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     }
     std::cout<<std::endl<<std::endl;
 
-    //奇异值分解
+    //奇异值分解   A:mxn U:mxn S:nxn V:nxn
     math::Matrix<double, 4, 5> U;
     math::Matrix<double, 5, 5> S, V;
     math::matrix_svd<double, 4, 5> (A,&U, &S, &V);

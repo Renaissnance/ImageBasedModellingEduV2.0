@@ -10,11 +10,17 @@ set(TRIANGLE_FILE
 add_executable(task3_test_triangle ${TRIANGLE_FILE})
 target_link_libraries(task3_test_triangle sfm util core)
 
-#test p3p
+#test p3p Kneip
 set(P3P_FILE
-        class3_test_p3p.cc)
-add_executable(task3_test_p3p ${P3P_FILE})
-target_link_libraries(task3_test_p3p sfm util core features)
+        class3_test_p3p_Kneip.cc)
+add_executable(task3_test_p3p_Kneip ${P3P_FILE})
+target_link_libraries(task3_test_p3p_Kneip sfm util core features)
+
+#test p3p baseon RANSAC Kneip
+set(P3P_FILE
+        class3_test_p3p_baseon_RANSAC_Kneip.cc)
+add_executable(task3_test_p3p_baseon_RANSAC_Kneip ${P3P_FILE})
+target_link_libraries(task3_test_p3p_baseon_RANSAC_Kneip sfm util core features)
 
 
 #test jacobian
