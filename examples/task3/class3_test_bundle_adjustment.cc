@@ -25,19 +25,28 @@
 
 #define MAX_PIXELS 1000000
 
-
+//用于将 features::Sift::Descriptors 类型的 SIFT 描述符数据转换为 util::AlignedMemory<math::Vec128f, 16> 类型的对齐内存。
 void convert_sift_discriptors(features::Sift::Descriptors const&sift_descrs,
-                              util::AlignedMemory<math::Vec128f, 16> *aligned_descr)
+                              util::AlignedMemory<math::Vec128f, 16> *aligned_descr)//容器套容器 aligned_descr是一个指向二维 vector 的指针。
+                              //aligned_descr 是一个指向类型为util::AlignedMemory<math::Vec128f, 16>的指针变量
+                              //AlignedMemory是vector实例化的对象第一个参数表示容器中存储的元素类型，第二个参数表示16字节的对齐方式
+
+//util::AlignedMemory是一个用于分配和管理内存的辅助类，可以确保分配的内存按照指定的对齐方式对齐。在这种情况下，它使用了16字节的对齐方式。aligned_descr是指向这块区域的指针
 {
     aligned_descr->resize(sift_descrs.size());
-    float * data_ptr=aligned_descr->data()->begin();
-    for(int i=0; i<sift_descrs.size(); ++i, data_ptr+=128)
+    float * data_ptr=aligned_descr->data()->begin();// For a non-empty %vector, data() == &front().  获取 aligned_descr 底层数据的指针
+    //第一个->data()是指向math::Vec128f vector的数据集的指针,再->begin()指向Vec128f获取指向底层数组中第一个元素的迭代器 相当于一个二级指针。
+    //通过 aligned_descr 指针访问对象的成员函数 data()，该函数返回一个指针，指向数据或数据数组的起始位置。
+    // 然后，通过该指针再调用成员函数 begin()，该函数返回指向数据或数据数组起始位置的指针。
+    for(int i=0; i<sift_descrs.size(); ++i, data_ptr+=128)//data_ptr是一个指针，指向一块内存区域，每次增加128表示在内存中向后移动128个字节的位置。
     {
-        features::Sift::Descriptor const& descr = sift_descrs[i];
+        features::Sift::Descriptor const& descr = sift_descrs[i];//获取 sift_descrs 的第 i 个描述符
         std::copy(descr.data.begin(), descr.data.end(), data_ptr);
+        //将描述符数据复制到 aligned_descr 的底层数据指针位置
     }
 
 }
+//
 
 float extract_focal_len(const std::string& img_name)
 {
@@ -56,18 +65,21 @@ sfm::Correspondences2D2D sift_feature_matching(sfm::FeatureSet &feat1
 
     /* 1.0 特征匹配*/
     // 进行数据转换
+    //用于将 features::Sift::Descriptors 类型的 SIFT 描述符数据转换为 util::AlignedMemory<math::Vec128f, 16> 类型的对齐内存。
     util::AlignedMemory<math::Vec128f, 16> aligned_descrs1, aligned_descrs2;
     convert_sift_discriptors(feat1.sift_descriptors, &aligned_descrs1);
     convert_sift_discriptors(feat2.sift_descriptors, &aligned_descrs2);
 
     // 特征匹配参数设置
-    features::Matching::Options matching_opts;
+    features::Matching::Options matching_opts;  //matchig.h/.cc 文件已看完2023/5/23-24
     matching_opts.descriptor_length = 128;
     matching_opts.distance_threshold = 1.0f;
     matching_opts.lowe_ratio_threshold = 0.8f;
 
     // 特征匹配
     features::Matching::Result matching_result;
+    //aligned_descrs1.data() 是获取 aligned_descrs1 对象中存储数据的指针。该指针指向容器中的第一个元素。即首地址
+    //aligned_descrs1.data()->begin() 意味着通过获取 aligned_descrs1 对象中存储数据的指针，然后使用 begin() 成员函数，返回一个指向容器中第一个元素的迭代器。
     features::Matching::twoway_match(matching_opts, aligned_descrs1.data()->begin()
             , feat1.sift_descriptors.size()
             ,aligned_descrs2.data()->begin()
@@ -78,6 +90,8 @@ sfm::Correspondences2D2D sift_feature_matching(sfm::FeatureSet &feat1
     std::cout << "Consistent Sift Matches: "
               << n_consitent_matches
               << std::endl;
+
+    ////*-------------以上 2023/5/24------------*/
 
     /*2.0 利用本征矩阵对数据进行*/
     // 进行特征点坐标归一化，归一化之后坐标中心位于(0,0), 范围[-0.5, 0.5]。坐标归一化有助于
@@ -99,11 +113,14 @@ sfm::Correspondences2D2D sift_feature_matching(sfm::FeatureSet &feat1
 
         corr_all.push_back(c2d2d);
     }
+
+    /********------------------已经看完-------------------*********/
+    //#include <sfm/ransac_fundamental.h>
     /* RANSAC 估计本征矩阵, 并对特征匹配对进行筛选*/
     sfm::RansacFundamental::Options ransac_fundamental_opts;
     ransac_fundamental_opts.max_iterations =1000;
     ransac_fundamental_opts.verbose_output = true;
-    sfm::RansacFundamental ransac_fundamental(ransac_fundamental_opts);
+    sfm::RansacFundamental ransac_fundamental(ransac_fundamental_opts);//ransac_fundamental函数的具体表达为 opts(options)；
     sfm::RansacFundamental::Result ransac_fundamental_result;
     ransac_fundamental.estimate(corr_all, &ransac_fundamental_result);
     // 根据估计的Fundamental矩阵对特征匹配对进行筛选
@@ -142,14 +159,17 @@ bool calc_cam_poses(sfm::Correspondences2D2D const &matches
     std::cout<<"E: "<<E<<std::endl;
 
     // 从本质矩阵中计算相机姿态,一共有四种情况
-    std::vector<sfm::CameraPose> poses;
+    std::vector<sfm::CameraPose> poses; //sfm::CameraPose里面存的是 K[R t]
     sfm::pose_from_essential(E, &poses);
 
     // 利用匹配点对从4中相机姿态中找到最合适的(利用姿态对匹配点进行三角化得到三维点，计算三维点的相机坐标，
     // 在两个相机的中的z坐标必须为正
     bool found_pose=false;
-    for(std::size_t i=0; i< poses.size(); ++i){
-        poses[i].K = pose2->K;
+    for(std::size_t i=0; i< poses.size(); ++i)
+        //函数判断 pose1 和当前遍历到的 poses[i] 是否一致。如果一致，则将 poses[i] 赋值给 pose2，并将 found_pose 标志设置为 true。
+        //如果遍历完整个容器后仍未找到一致的相机姿态，则 found_pose 标志保持为 false。
+    {
+        poses[i].K = pose2->K;//首先将 poses[i] 的内参矩阵设置为 pose2->K
         if(sfm::is_consistent_pose(matches[0],*pose1, poses[i]))
         {
             *pose2 = poses[i];

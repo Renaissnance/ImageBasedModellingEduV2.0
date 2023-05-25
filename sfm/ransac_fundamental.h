@@ -48,7 +48,7 @@ public:
         double threshold;
 
         /**
-         * Produce status messages on the console.
+         * Produce status messages on the console.//在控制台上输出状态信息
          */
         bool verbose_output;
     };
@@ -70,6 +70,7 @@ public:
 
 public:
     explicit RansacFundamental (Options const& options);
+    //explicit 关键字是 C++ 中的一个修饰符，用于声明构造函数或转换函数（转换构造函数）只能显式地进行调用，不能隐式地进行类型转换。
     void estimate (Correspondences2D2D const& matches, Result* result);
 
 private:
@@ -79,7 +80,7 @@ private:
         FundamentalMatrix const& fundamental, std::vector<int>* result);
 
 private:
-    Options opts;
+    Options opts; //存放Options的对象
 };
 
 /* ------------------------ Implementation ------------------------ */

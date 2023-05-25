@@ -214,9 +214,10 @@ namespace
 template <>
 void
 NearestNeighbor<short>::find (short const* query,
-    NearestNeighbor<short>::Result* result) const
+    NearestNeighbor<short>::Result* result) const  //T类型是short 类模板成员函数类外实现时需要加上模板参数列表：NearestNeighbor<unsigned short>::
 {
     /* Result distances are shamelessly misused to store inner products. */
+    //结果距离（可能是指计算出的某种距离度量）被错误地用于存储内积（向量之间的点积）。这种滥用可能导致数据的不正确解释或错误的计算结果。
     result->dist_1st_best = 0;
     result->dist_2nd_best = 0;
     result->index_1st_best = 0;
@@ -231,6 +232,9 @@ NearestNeighbor<short>::find (short const* query,
      * The maximum distance is (2*127)^2, which unfortunately does not fit
      * in a signed short. Therefore, the distance is clapmed at 127^2.
      */
+    //这段注释解释了计算实际平方距离的过程。对于 'signed char' 类型的向量，距离的计算公式是 2 * 127^2 - 2 * <Q, Ci>。
+    // 然而，最大距离 (2*127)^2 无法存储在有符号的 short 类型中，因此距离被限制在 127^2
+    //该表达式的目的是将 (int)result->dist_1st_best 限制在 0 和 16129 之间的范围内，即返回最接近 (int)result->dist_1st_best 的值，同时不超过 16129。
     result->dist_1st_best = std::min(16129, std::max(0, (int)result->dist_1st_best));
     result->dist_2nd_best = std::min(16129, std::max(0, (int)result->dist_2nd_best));
     result->dist_1st_best = 32258 - 2 * result->dist_1st_best;
@@ -240,7 +244,7 @@ NearestNeighbor<short>::find (short const* query,
 template <>
 void
 NearestNeighbor<unsigned short>::find (unsigned short const* query,
-    NearestNeighbor<unsigned short>::Result* result) const
+    NearestNeighbor<unsigned short>::Result* result) const  //类模板成员函数类外实现时需要加上模板参数列表：NearestNeighbor<unsigned short>::
 {
     /* Result distances are shamelessly misused to store inner products. */
     result->dist_1st_best = 0;
@@ -259,6 +263,12 @@ NearestNeighbor<unsigned short>::find (unsigned short const* query,
      * 2 * 255^2 - 2 * <Q, Ci> = 2 * (255^2 - <Q, Ci>) and (255^2 - <Q, Ci>)
      * is clamped to 32767 and then multiplied by 2.
      */
+
+    //这段注释解释了计算实际平方距离的过程。对于 'unsigned char' 类型的向量，距离的计算公式是 2 * 255^2 - 2 * <Q, Ci>。
+    // 然而，最大距离 (2*255)^2 无法存储在无符号的 short 类型中。
+    // 因此，结果距离被限制为 2 * 255^2 - 2 * <Q, Ci> = 2 * (255^2 - <Q, Ci>)。其中 (255^2 - <Q, Ci>) 被限制为 32767，并且最后结果乘以 2。
+    //由于计算结果需要存储在 'unsigned char' 类型中，而这个类型的范围是从 0 到 255，不包含负数。因此，2 * 255^2 的结果超出了该范围。
+    // 为了限制结果距离在 'unsigned char' 类型的范围内，计算公式进行了调整，即 2 * 255^2 - 2 * <Q, Ci>。这样计算得到的结果范围是从 0 到 255。
     result->dist_1st_best = std::min(65025, (int)result->dist_1st_best);
     result->dist_2nd_best = std::min(65025, (int)result->dist_2nd_best);
     result->dist_1st_best = 65025 - result->dist_1st_best;

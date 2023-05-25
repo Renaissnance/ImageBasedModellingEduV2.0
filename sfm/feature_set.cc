@@ -45,11 +45,11 @@ FeatureSet::normalize_feature_positions (void)
     /* Normalize image coordinates. */
     float const fwidth = static_cast<float>(this->width);
     float const fheight = static_cast<float>(this->height);
-    float const fnorm = std::max(fwidth, fheight);
+    float const fnorm = std::max(fwidth, fheight);//用于后面归一化计算
     for (std::size_t i = 0; i < this->positions.size(); ++i)
     {
-        math::Vec2f& pos = this->positions[i];
-        pos[0] = (pos[0] + 0.5f - fwidth / 2.0f) / fnorm;
+        math::Vec2f& pos = this->positions[i]; //positions 是一个存储 math::Vec2f 类型的容器，即二维向量的数组。
+        pos[0] = (pos[0] + 0.5f - fwidth / 2.0f) / fnorm;//这一步操作将 pos[0] 的范围映射到 [-0.5, 0.5]，再除以 fnorm 将其归一化到 [-1, 1] 的范围。
         pos[1] = (pos[1] + 0.5f - fheight / 2.0f) / fnorm;
     }
 }

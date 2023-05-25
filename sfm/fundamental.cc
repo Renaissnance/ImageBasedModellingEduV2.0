@@ -81,9 +81,10 @@ fundamental_8_point (Eight2DPoints const& points_view_1,
     /*
      * Create 8x9 matrix A. Each pair of input points creates on row in A.
      */
-    math::Matrix<double, 8, 9> A;
+    math::Matrix<double, 8, 9> A; //9个未知数 八对点 每对点提供一个约束 即A为 8x9
     for (int i = 0; i < 8; ++i)
     {
+        // [x1*x2, x2*y1,x2, x1*y2, y1*y2, y2, x1, y1, 1]*f = 0,
         math::Vector<double, 3> p1 = points_view_1.col(i);
         math::Vector<double, 3> p2 = points_view_2.col(i);
         A(i, 0) = p2[0] * p1[0];
@@ -110,7 +111,7 @@ fundamental_8_point (Eight2DPoints const& points_view_1,
 }
 
 void
-enforce_fundamental_constraints (FundamentalMatrix* matrix)
+enforce_fundamental_constraints (FundamentalMatrix* matrix)//利用奇异值分解对基础矩阵F进行重构
 {
     /*
      * Constraint enforcement. The fundamental matrix F has rank 2 and 7
@@ -168,13 +169,13 @@ void
     // FIXME: Is this the correct way to do it?
     if (math::matrix_determinant(U) < 0.0)
         for (int i = 0; i < 3; ++i)
-            U(i,2) = -U(i,2);
+            U(i,2) = -U(i,2); //第三列变为负数
     if (math::matrix_determinant(V) < 0.0)
         for (int i = 0; i < 3; ++i)
-            V(i,2) = -V(i,2);
+            V(i,2) = -V(i,2); //第三列变为负数
 
     V.transpose();
-    result->clear();
+    result->clear(); //指针->指向成员函数
     result->resize(4);
     result->at(0).R = U * W * V;
     result->at(1).R = result->at(0).R;
@@ -210,8 +211,8 @@ fundamental_from_pose (CameraPose const& cam1, CameraPose const& cam2,
     cam1.fill_p_matrix(&P1);
     cam2.fill_p_matrix(&P2);
 
-    math::Vec4d c1(cam1.R.transposed() * -cam1.t, 1.0);
-    math::Vec3d e2 = P2 * c1;
+    math::Vec4d c1(cam1.R.transposed() * -cam1.t, 1.0);//cam1.R.transposed() * -cam1.t,得到一个长度为3的向量  c1是一个四维的向量 3d点的齐次坐标
+    math::Vec3d e2 = P2 * c1;// 3*4x4*1=3*1  e2为二维点齐次坐标 P*X
 
     math::Matrix3d ex;
     cross_product_matrix(e2, &ex);
@@ -243,7 +244,7 @@ sampson_distance (FundamentalMatrix const& F, Correspondence2D2D const& m)
     p2_F_p1 *= p2_F_p1;
 
     double sum = 0.0;
-    sum += math::fastpow(m.p1[0] * F[0] + m.p1[1] * F[1] + F[2], 2);
+    sum += math::fastpow(m.p1[0] * F[0] + m.p1[1] * F[1] + F[2], 2);//math::fastpow次幂
     sum += math::fastpow(m.p1[0] * F[3] + m.p1[1] * F[4] + F[5], 2);
     sum += math::fastpow(m.p2[0] * F[0] + m.p2[1] * F[3] + F[6], 2);
     sum += math::fastpow(m.p2[0] * F[1] + m.p2[1] * F[4] + F[7], 2);

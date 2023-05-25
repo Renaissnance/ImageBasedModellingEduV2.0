@@ -46,12 +46,12 @@ template <typename T>
 class NearestNeighbor
 {
 public:
-    /** Unlike the naming suggests, these are square distances. */
+    /** Unlike the naming suggests, these are square distances. *///平方距离
     struct Result
     {
-        T dist_1st_best;
-        T dist_2nd_best;
-        int index_1st_best;
+        T dist_1st_best;  //最近邻的距离
+        T dist_2nd_best;  //次近邻的距离
+        int index_1st_best; //最近邻索引
         int index_2nd_best;
     };
 

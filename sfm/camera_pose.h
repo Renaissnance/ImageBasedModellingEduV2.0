@@ -79,8 +79,10 @@ CameraPose::fill_p_matrix (math::Matrix<double, 3, 4>* P) const
 {
     math::Matrix<double, 3, 3> KR = this->K * this->R;
     math::Matrix<double, 3, 1> Kt(*(this->K * this->t));
-    *P = KR.hstack(Kt);
+    //将这个结果解引用，并将其作为参数传递给 math::Matrix<double, 3, 1> 的构造函数
+    *P = KR.hstack(Kt);//P是指针解引用是P矩阵
 }
+//调用 hstack 函数将 KR 和 Kt 水平拼接起来，得到一个 3x4 的矩阵，并将其赋值给 P 所指向的对象。
 
 inline void
 CameraPose::set_k_matrix (double flen, double px, double py)

@@ -38,15 +38,7 @@ target_link_libraries(task2_test_fundamental_ransac sfm util core features )
 
 #pose from fundamental
 set(POSE_FROM_FUNDAMENTAL
-        calss2_test_pose_from_fundamental.cc
-        )
+        calss2_test_pose_from_fundamental.cc)
 add_executable(task2_test_pose_from_fundamental ${POSE_FROM_FUNDAMENTAL} )
 target_link_libraries(task2_test_pose_from_fundamental sfm util core features )
 
-
-
-#matching strategy methods
-set(Matching_Strategy_Methods
-        class2_matching_strategy_methods.cc)
-add_executable(task2_matching_strategy_methods ${FUNDAMENTAL_RANSAC_FILE})
-target_link_libraries(task2_matching_strategy_methods sfm util core features )
