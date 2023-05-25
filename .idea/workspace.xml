@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="ImageBasedModellingEdu" targetName="task3_test_lm_optimize" />
+      <config projectName="ImageBasedModellingEdu" targetName="sfm" />
+      <config projectName="ImageBasedModellingEdu" targetName="task2_test_pose_from_fundamental" />
+      <config projectName="ImageBasedModellingEdu" targetName="class5_scene2pset_multi_views" />
+      <config projectName="ImageBasedModellingEdu" targetName="task2_test_fundamental_ransac" />
+      <config projectName="ImageBasedModellingEdu" targetName="task6_surface_reconstruction" />
+      <config projectName="ImageBasedModellingEdu" targetName="task3_test_jacobian" />
+      <config projectName="ImageBasedModellingEdu" targetName="task3_test_p3p_Kneip" />
+      <config projectName="ImageBasedModellingEdu" targetName="task2_test_fundamental_8_point" />
+      <config projectName="ImageBasedModellingEdu" targetName="coldet" />
+      <config projectName="ImageBasedModellingEdu" targetName="task3_test_triangle" />
+      <config projectName="ImageBasedModellingEdu" targetName="task5_dmrecon_multi_views" />
+      <config projectName="ImageBasedModellingEdu" targetName="core" />
+      <config projectName="ImageBasedModellingEdu" targetName="task5_dmrecon_single_view" />
+      <config projectName="ImageBasedModellingEdu" targetName="features" />
+      <config projectName="ImageBasedModellingEdu" targetName="task4_incremental_sfm" />
+      <config projectName="ImageBasedModellingEdu" targetName="util" />
+      <config projectName="ImageBasedModellingEdu" targetName="gco" />
+      <config projectName="ImageBasedModellingEdu" targetName="task3_test_p3p_baseon_RANSAC_Kneip" />
+      <config projectName="ImageBasedModellingEdu" targetName="task2_test_camera_model" />
+      <config projectName="ImageBasedModellingEdu" targetName="task3_test_ba" />
+      <config projectName="ImageBasedModellingEdu" targetName="task7_texturing" />
+      <config projectName="ImageBasedModellingEdu" targetName="task2_test_math_basic" />
+      <config projectName="ImageBasedModellingEdu" targetName="mrf" />
+      <config projectName="ImageBasedModellingEdu" targetName="task1_test_features" />
+      <config projectName="ImageBasedModellingEdu" targetName="surface" />
+      <config projectName="ImageBasedModellingEdu" targetName="texturing" />
+      <config projectName="ImageBasedModellingEdu" targetName="task7_mesh_clean" />
+      <config projectName="ImageBasedModellingEdu" targetName="task1_test_matching" />
+      <config projectName="ImageBasedModellingEdu" targetName="mvs" />
+      <config projectName="ImageBasedModellingEdu" targetName="class5_scene2pset_single_view" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f67ee62f-56d2-455a-a82b-847474a406f5" name="Changes" comment="自己添加的代码注释">
+      <change beforePath="$PROJECT_DIR$/examples/task1/class1_test_features.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task1/class1_test_features.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task2/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task2/class2_matching_strategy_methods.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task2/class2_test_fundamental_8_point.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task2/class2_test_fundamental_8_point.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_bundle_adjustment.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_bundle_adjustment.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_jacobian.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_jacobian.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_p3p_Kneip.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_p3p_Kneip.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_triangle.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_triangle.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/matching.cc" beforeDir="false" afterPath="$PROJECT_DIR$/features/matching.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/matching.h" beforeDir="false" afterPath="$PROJECT_DIR$/features/matching.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/nearest_neighbor.cc" beforeDir="false" afterPath="$PROJECT_DIR$/features/nearest_neighbor.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/nearest_neighbor.h" beforeDir="false" afterPath="$PROJECT_DIR$/features/nearest_neighbor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/camera_pose.h" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/camera_pose.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/feature_set.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/feature_set.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/fundamental.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/fundamental.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/ransac_fundamental.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/ransac_fundamental.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/ransac_fundamental.h" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/ransac_fundamental.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/aligned_memory.h" beforeDir="false" afterPath="$PROJECT_DIR$/util/aligned_memory.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/examples/task2/calss2_test_pose_from_fundamental.cc" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/task2/class2_matching_strategy_methods.cc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/task2/class2_test_camera.cc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/task2/class2_test_fundamental_8_point.cc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/examples/task2/class2_test_math_basic.cc" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2Om8oJXFSbQq5BVSO3qMGj3LJh9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ros/CLionProjects/ImageBasedModellingEdu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/task3" />
+      <recent name="$PROJECT_DIR$/examples/task2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.task3_test_ba">
+    <configuration name="class5_scene2pset_multi_views" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="class5_scene2pset_multi_views" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="class5_scene2pset_multi_views">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="class5_scene2pset_single_view" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="class5_scene2pset_single_view" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="class5_scene2pset_single_view">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="coldet" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="coldet" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="core" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="core" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="features" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="features" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gco" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="gco" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mrf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="mrf" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mvs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="mvs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="sfm" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="surface" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="surface" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task1_test_features" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/examples/data/kxm1.jpg $PROJECT_DIR$/examples/task1/result/" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task1_test_features" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task1_test_features">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task1_test_matching" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/examples/data/kxm1.jpg $PROJECT_DIR$/examples/data/kxm2.jpg $PROJECT_DIR$/examples/task1/result/match.jpg" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task1_test_matching" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task1_test_matching">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task2_test_camera_model" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task2_test_camera_model" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task2_test_camera_model">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task2_test_fundamental_8_point" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task2_test_fundamental_8_point" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task2_test_fundamental_8_point">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task2_test_fundamental_ransac" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task2_test_fundamental_ransac" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task2_test_fundamental_ransac">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task2_test_math_basic" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task2_test_math_basic" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task2_test_math_basic">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task2_test_pose_from_fundamental" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task2_test_pose_from_fundamental" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task2_test_pose_from_fundamental">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task3_test_ba" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/examples/data/kxm1.jpg $PROJECT_DIR$/examples/data/kxm2.jpg" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task3_test_ba" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task3_test_ba">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task3_test_jacobian" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task3_test_jacobian" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task3_test_jacobian">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task3_test_lm_optimize" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task3_test_lm_optimize" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task3_test_lm_optimize">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task3_test_p3p_Kneip" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task3_test_p3p_Kneip" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task3_test_p3p_Kneip">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task3_test_p3p_baseon_RANSAC_Kneip" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task3_test_p3p_baseon_RANSAC_Kneip" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task3_test_p3p_baseon_RANSAC_Kneip">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task3_test_triangle" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task3_test_triangle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task3_test_triangle">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task4_incremental_sfm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task4_incremental_sfm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task4_incremental_sfm">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task5_dmrecon_multi_views" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task5_dmrecon_multi_views" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task5_dmrecon_multi_views">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task5_dmrecon_single_view" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task5_dmrecon_single_view" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task5_dmrecon_single_view">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task6_surface_reconstruction" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task6_surface_reconstruction" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task6_surface_reconstruction">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task7_mesh_clean" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task7_mesh_clean" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task7_mesh_clean">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="task7_texturing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="task7_texturing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ImageBasedModellingEdu" RUN_TARGET_NAME="task7_texturing">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="texturing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="texturing" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="util" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ImageBasedModellingEdu" TARGET_NAME="util" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.coldet" />
+      <item itemvalue="CMake Application.gco" />
+      <item itemvalue="CMake Application.mrf" />
+      <item itemvalue="CMake Application.core" />
+      <item itemvalue="CMake Application.task1_test_features" />
+      <item itemvalue="CMake Application.task1_test_matching" />
+      <item itemvalue="CMake Application.task2_test_camera_model" />
+      <item itemvalue="CMake Application.task2_test_fundamental_8_point" />
+      <item itemvalue="CMake Application.task2_test_fundamental_ransac" />
+      <item itemvalue="CMake Application.task2_test_math_basic" />
+      <item itemvalue="CMake Application.task2_test_pose_from_fundamental" />
+      <item itemvalue="CMake Application.task3_test_ba" />
+      <item itemvalue="CMake Application.task3_test_jacobian" />
+      <item itemvalue="CMake Application.task3_test_lm_optimize" />
+      <item itemvalue="CMake Application.task3_test_p3p_baseon_RANSAC_Kneip" />
+      <item itemvalue="CMake Application.task3_test_p3p_Kneip" />
+      <item itemvalue="CMake Application.task3_test_triangle" />
+      <item itemvalue="CMake Application.task4_incremental_sfm" />
+      <item itemvalue="CMake Application.class5_scene2pset_multi_views" />
+      <item itemvalue="CMake Application.class5_scene2pset_single_view" />
+      <item itemvalue="CMake Application.task5_dmrecon_multi_views" />
+      <item itemvalue="CMake Application.task5_dmrecon_single_view" />
+      <item itemvalue="CMake Application.task6_surface_reconstruction" />
+      <item itemvalue="CMake Application.task7_mesh_clean" />
+      <item itemvalue="CMake Application.task7_texturing" />
+      <item itemvalue="CMake Application.features" />
+      <item itemvalue="CMake Application.mvs" />
+      <item itemvalue="CMake Application.sfm" />
+      <item itemvalue="CMake Application.surface" />
+      <item itemvalue="CMake Application.texturing" />
+      <item itemvalue="CMake Application.util" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f67ee62f-56d2-455a-a82b-847474a406f5" name="Changes" comment="" />
+      <created>1682154572150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682154572150</updated>
+      <workItem from="1682154573135" duration="36000" />
+      <workItem from="1682154644147" duration="736000" />
+      <workItem from="1682211524475" duration="7144000" />
+      <workItem from="1682300376846" duration="107000" />
+      <workItem from="1682300911560" duration="1054000" />
+      <workItem from="1682303405329" duration="19723000" />
+      <workItem from="1682384035270" duration="29825000" />
+      <workItem from="1682471103803" duration="28079000" />
+      <workItem from="1682560050541" duration="2573000" />
+      <workItem from="1682575984260" duration="447000" />
+      <workItem from="1682577030413" duration="2501000" />
+      <workItem from="1682580283504" duration="599000" />
+      <workItem from="1683263879215" duration="3143000" />
+      <workItem from="1683267316900" duration="6033000" />
+      <workItem from="1683273411138" duration="4393000" />
+      <workItem from="1683335555681" duration="6413000" />
+      <workItem from="1683512460260" duration="19268000" />
+      <workItem from="1683596804926" duration="2469000" />
+      <workItem from="1683708528178" duration="6226000" />
+      <workItem from="1683891881820" duration="786000" />
+      <workItem from="1684473700404" duration="6977000" />
+      <workItem from="1684736269681" duration="18254000" />
+      <workItem from="1684889572112" duration="6000" />
+      <workItem from="1684921169562" duration="10215000" />
+      <workItem from="1684975620202" duration="8436000" />
+    </task>
+    <task id="LOCAL-00001" summary="自己添加的代码注释">
+      <created>1682579682507</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682579682509</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="自己添加的代码注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="自己添加的代码注释" />
+  </component>
+</project>
