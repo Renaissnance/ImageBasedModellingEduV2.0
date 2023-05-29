@@ -39,22 +39,22 @@ RansacFundamental::estimate (Correspondences2D2D const& matches, Result* result)
     {
         FundamentalMatrix fundamental;//math::Matrix<double, 3, 3> FundamentalMatrix
         this->estimate_8_point(matches, &fundamental); //八点法
-        this->find_inliers(matches, fundamental, &inliers);//将内点数放入std::vector<int>* result里
-        if (inliers.size() > result->inliers.size())
-            //inliers.size()放的是matches的大小， ransacFundamental：：Result：：std::vector<int> inliers;
+        this->find_inliers(matches, fundamental, &inliers);//将内点数放入inliers里
+        if (inliers.size() > result->inliers.size())//内点的个数大于最终内点的个数
+            //inliers.size()放的是内点的个数，result->inliers.size()放的是ransacFundamental：：Result：：std::vector<int> ransac后inliers内点的数量
         {
-            if (this->opts.verbose_output)
+            if (this->opts.verbose_output)//在控制台上输出状态信息
             {
                 std::cout << "RANSAC-F: Iteration " << iteration
                     << ", inliers " << inliers.size() << " ("
                     << (100.0 * inliers.size() / matches.size())
-                    << "%)" << std::endl;
+                    << "%)" << std::endl;//它将内点数量乘以100.0，然后除以matches的数量，得到一个浮点数表示的百分比值。
             }
 
-            result->fundamental = fundamental;
+            result->fundamental = fundamental;//将8点法的基础矩阵f传给RansacFundamental::Result::fundamental
 
-            std::swap(result->inliers, inliers);
-            inliers.reserve(matches.size());
+            std::swap(result->inliers, inliers);//result->inliers放的是ransac后inliers内点的数量，inliers放的是内点的个数 反转
+            inliers.reserve(matches.size());//ransac后内点数重新预留匹配对大小的空间
         }
     }
 }

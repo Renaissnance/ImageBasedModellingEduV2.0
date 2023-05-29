@@ -18,11 +18,11 @@ SFM_NAMESPACE_BEGIN
 
 math::Vector<double, 3>
 triangulate_match (Correspondence2D2D const& match,
-    CameraPose const& pose1, CameraPose const& pose2)
+    CameraPose const& pose1, CameraPose const& pose2)//CameraPose包含了 K R T
 {
     /* The algorithm is described in HZ 12.2, page 312. */
     math::Matrix<double, 3, 4> P1, P2;
-    pose1.fill_p_matrix(&P1);
+    pose1.fill_p_matrix(&P1);// [KR KT]  传给P矩阵
     pose2.fill_p_matrix(&P2);
 
     std::cout<<"P1: "<<P1<<std::endl;
@@ -31,9 +31,9 @@ triangulate_match (Correspondence2D2D const& match,
     math::Matrix<double, 4, 4> A;
     for (int i = 0; i < 4; ++i)
     {
-        A(0, i) = match.p1[0] * P1(2, i) - P1(0, i);
+        A(0, i) = match.p1[0] * P1(2, i) - P1(0, i);//第一个二维点
         A(1, i) = match.p1[1] * P1(2, i) - P1(1, i);
-        A(2, i) = match.p2[0] * P2(2, i) - P2(0, i);
+        A(2, i) = match.p2[0] * P2(2, i) - P2(0, i);//第二个二维点
         A(3, i) = match.p2[1] * P2(2, i) - P2(1, i);
     }
     std::cout<<"A: "<<A<<std::endl;

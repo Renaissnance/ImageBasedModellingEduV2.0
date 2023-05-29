@@ -52,6 +52,7 @@ float extract_focal_len(const std::string& img_name)
 {
     std::string exif_str;
     core::image::load_jpg_file(img_name.c_str(), &exif_str);
+    //将图像文件img_name加载到exif_str字符串中。这个函数的作用是读取图像文件并提取其中的EXIF数据，将数据保存在exif_str中。
     core::image::ExifInfo exif = core::image::exif_extract(exif_str.c_str(), exif_str.size(), false);
     sfm::FocalLengthEstimate fl = sfm::extract_focal_length(exif);
     std::cout <<"Focal length: " <<fl.first << " " << fl.second << std::endl;
@@ -122,13 +123,13 @@ sfm::Correspondences2D2D sift_feature_matching(sfm::FeatureSet &feat1
     ransac_fundamental_opts.verbose_output = true;
     sfm::RansacFundamental ransac_fundamental(ransac_fundamental_opts);//ransac_fundamental函数的具体表达为 opts(options)；
     sfm::RansacFundamental::Result ransac_fundamental_result;
-    ransac_fundamental.estimate(corr_all, &ransac_fundamental_result);
+    ransac_fundamental.estimate(corr_all, &ransac_fundamental_result);//ransac后内点放入ransac_fundamental_result的inliers里
     // 根据估计的Fundamental矩阵对特征匹配对进行筛选
-    sfm::Correspondences2D2D corr_f;
-    for(int i=0; i<ransac_fundamental_result.inliers.size(); ++i)
+    sfm::Correspondences2D2D corr_f;//std::vector<Correspondence2D2D>
+    for(int i=0; i<ransac_fundamental_result.inliers.size(); ++i)//std::vector<int> inliers ransac内点的数量
     {
         int inlier_id = ransac_fundamental_result.inliers[i];
-        corr_f.push_back(corr_all[inlier_id]);
+        corr_f.push_back(corr_all[inlier_id]);//将corr_all里的ransac的内点个数放入corr_f里
     }
 
     std::cout<<"F: "<<ransac_fundamental_result.fundamental<<std::endl;
@@ -140,12 +141,12 @@ bool calc_cam_poses(sfm::Correspondences2D2D const &matches
                   , sfm::CameraPose* pose1
                   , sfm::CameraPose* pose2
                   , float f1
-                  , float f2)
+                  , float f2)//CameraPose：K，R，T
 {
     // calculate fundamental matrix from  pair correspondences
     sfm::FundamentalMatrix F;
-    sfm::fundamental_least_squares(matches, &F);
-    sfm::enforce_essential_constraints(&F);
+    sfm::fundamental_least_squares(matches, &F);//最小二乘 当匹配点对数大于8对时
+    sfm::enforce_essential_constraints(&F);//本质矩阵E的齐异值约束
 
     // 设置相机1的内参矩阵
     pose1->set_k_matrix(f1, 0.0, 0.0);
@@ -180,9 +181,10 @@ bool calc_cam_poses(sfm::Correspondences2D2D const &matches
     return found_pose;
 }
 
+///*----------------------------2023/5/25----------------------------*/
 
 int
-main (int argc, char *argv[])
+main (int argc, char *argv[])//argc代表命令行参数的数量，而argv是一个指向字符指针数组的指针，用于存储命令行参数的字符串。
 {
     if (argc != 3)
     {
@@ -250,7 +252,7 @@ main (int argc, char *argv[])
         return -1;
     }
 
-    /* 三角化 */
+    /* 三角化 */   //利用投影矩阵得到空间的三维点
     std::vector<math::Vec3f> pts_3d;
     for(int i=0; i<corrs.size(); i++)
     {
@@ -265,20 +267,22 @@ main (int argc, char *argv[])
     std::cout<<"Successful triangulation:  "<<pts_3d.size()<<" points"<<std::endl;
 //    for(int i=0; i<pts_3d.size(); i++)
 //    {
-//        std::cout<<pts_3d[i][0]<<" "<<pts_3d[i][1]<<" "<<pts_3d[i][2]<<std::endl;
+//        std::cout<<pts_3d[i][0]<<" "<<pts_3d[i][1]<<" "<<pts_3d[i][2]<<std::endl; //即一个三维点的XYZ坐标
 //    }
 
-    std::ofstream out("./examples/task2/test_ba.txt");
+    std::ofstream out("./examples/task2/test_ba.txt");//C++中用于创建输出文件流的语法 创建一个名为"./examples/task2/test_ba.txt"的输出文件流对象
     assert(out.is_open());
-
+/*------------------------------------------------------5.29-------------------------------------*/
     /*捆绑调整*/
-    std::vector<sfm::ba::Camera> cams(2);
+    std::vector<sfm::ba::Camera> cams(2);//通过传递参数(2)，我们指定了向量vector的初始大小为2，即向量中有两个元素。每个元素的类型是sfm::ba::Camera。
     out<<"n_cam "<< cams.size()<<std::endl;
 
     cams[0].focal_length = pose1.get_focal_length();
-    std::copy(pose1.t.begin(), pose1.t.end(), cams[0].translation);
+    std::copy(pose1.t.begin(), pose1.t.end(), cams[0].translation);//将数据从一个地方复制到另一个地方。
     std::copy(pose1.R.begin(), pose1.R.end(), cams[0].rotation);
     std::fill(cams[0].distortion, cams[0].distortion + 2, 0.0);
+    //这行代码使用std::fill算法将cams[0].distortion数组中的前两个元素（从cams[0].distortion开始的2个元素）都设置为0.0。
+    // cams[0].distortion是一个数组，cams[0].distortion + 2是一个指向数组中的第三个元素的指针，因此通过将前两个元素都设置为0.0，对应位置的值将被覆盖。
 
     out<<cams[0].focal_length<<" ";
     out<<cams[0].distortion[0]<<" "<< cams[0].distortion[1]<<" ";

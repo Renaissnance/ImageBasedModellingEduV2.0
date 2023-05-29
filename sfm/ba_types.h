@@ -13,7 +13,7 @@ struct Camera
 {
     Camera (void);
 
-    double focal_length = 0.0;
+    double focal_length = 0.0;//焦距
     double distortion[2];
     double translation[3];
     double rotation[9];

@@ -50,25 +50,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f67ee62f-56d2-455a-a82b-847474a406f5" name="Changes" comment="自己添加的代码注释">
-      <change beforePath="$PROJECT_DIR$/examples/task1/class1_test_features.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task1/class1_test_features.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/task2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task2/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/task2/class2_matching_strategy_methods.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/task2/class2_test_fundamental_8_point.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task2/class2_test_fundamental_8_point.cc" afterDir="false" />
+    <list default="true" id="f67ee62f-56d2-455a-a82b-847474a406f5" name="Changes" comment="添加理解注释">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_bundle_adjustment.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_bundle_adjustment.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_jacobian.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_jacobian.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_p3p_Kneip.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_p3p_Kneip.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/task3/class3_test_triangle.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/task3/class3_test_triangle.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/matching.cc" beforeDir="false" afterPath="$PROJECT_DIR$/features/matching.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/matching.h" beforeDir="false" afterPath="$PROJECT_DIR$/features/matching.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/nearest_neighbor.cc" beforeDir="false" afterPath="$PROJECT_DIR$/features/nearest_neighbor.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/nearest_neighbor.h" beforeDir="false" afterPath="$PROJECT_DIR$/features/nearest_neighbor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sfm/camera_pose.h" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/camera_pose.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sfm/feature_set.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/feature_set.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sfm/fundamental.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/fundamental.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/ba_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/ba_types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/extract_focal_length.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/extract_focal_length.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sfm/ransac_fundamental.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/ransac_fundamental.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sfm/ransac_fundamental.h" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/ransac_fundamental.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/aligned_memory.h" beforeDir="false" afterPath="$PROJECT_DIR$/util/aligned_memory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sfm/triangulate.cc" beforeDir="false" afterPath="$PROJECT_DIR$/sfm/triangulate.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,6 +335,9 @@
       <workItem from="1684889572112" duration="6000" />
       <workItem from="1684921169562" duration="10215000" />
       <workItem from="1684975620202" duration="8436000" />
+      <workItem from="1685016683486" duration="646000" />
+      <workItem from="1685062980682" duration="3846000" />
+      <workItem from="1685328968659" duration="4868000" />
     </task>
     <task id="LOCAL-00001" summary="自己添加的代码注释">
       <created>1682579682507</created>
@@ -367,6 +358,17 @@
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -381,5 +383,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="自己添加的代码注释" />
     <option name="LAST_COMMIT_MESSAGE" value="自己添加的代码注释" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sfm/triangulate.h</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

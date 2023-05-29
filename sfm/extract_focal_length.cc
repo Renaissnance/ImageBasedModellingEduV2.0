@@ -18,7 +18,7 @@ SFM_NAMESPACE_BEGIN
 std::pair<float, FocalLengthMethod>
 extract_focal_length (core::image::ExifInfo const& exif)
 {
-    /* Step 1: Check for focal length info in EXIF and database entry. */
+    /* Step 1: Check for focal length info in EXIF and database entry. *///focal length焦距
     float focal_length = exif.focal_length;
     std::string camera_maker = exif.camera_maker;
     std::string camera_model = exif.camera_model;
